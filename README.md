@@ -97,9 +97,6 @@ Sample Zones: Defined in sample_data.py
 🧪 Sample Checker
 To validate your final arrangement, run:
 
-bash
-Copy
-Edit
 bash sample_checker.sh
 This checks for:
 
@@ -134,36 +131,20 @@ Docker – Containerization
 Uvicorn – ASGI server
 
 🏁 Authors
-Team Name: [Insert Your Team Name]
+Team Name: [Karyasheel]
 
 Members:
 
-[Name 1 – GitHub link]
+[Siddharth Kumar]
 
-[Name 2 – GitHub link]
+[Aarav Majumdar]
 
-[Name 3 – GitHub link]
+[Ronit Jaiswal]
 
-📬 Submission Links
-🔗 GitHub Repo: [Insert URL]
+[Kanishk Nagar]
 
-📄 Technical Report (PDF): [Insert Google Drive Link]
-
-🎥 Demo Video: [Insert Google Drive Link]
 
 🏆 Let’s Launch!
 This project aims to contribute toward safer and more efficient space missions by automating and optimizing cargo logistics. We hope this helps astronauts spend more time exploring — and less time packing.
 
 “It’s not rocket science... wait, yes it is.” 🚀
-
-yaml
-Copy
-Edit
-
----
-
-Let me know if you'd like me to:
-- Write your **`Dockerfile`**
-- Create a **`requirements.txt`**
-- Auto-generate the **`main.py` API skeleton**  
-I'm ready when you are!
