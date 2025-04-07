@@ -1,144 +1,87 @@
-# NSH_NeuroDock_Karyasheel
-It is the repository of Solution for the problem statement of NSH, by Team Karyasheel. We Present you NeuroDock
-# 🚀 Cargo Stowage Management System – National Space Hackathon 2025
+# Space Cargo Management and Simulation System
 
-Welcome to our submission for the **National Space Hackathon 2025**! This project addresses the challenge of efficiently organizing mission-critical cargo into spacecraft containers, optimizing for space, weight, priority, perishability, and zone preferences.
+## Overview
 
----
+The Space Cargo Management and Simulation System is a comprehensive software solution designed to simulate and manage cargo operations aboard a space station. This system facilitates the placement, retrieval, rearrangement, and waste management of cargo, while also supporting time-based simulations and integrating machine learning for intelligent decision-making.
 
-## 📦 Project Overview
+## Features
 
-Our system implements a cargo placement engine that:
+- **Cargo Placement**: Efficiently place cargo based on type, weight, and dimensions.
+- **Cargo Retrieval**: Retrieve specific cargo items and manage surrounding cargo.
+- **Rearrangement**: Optimize cargo arrangement for space and safety.
+- **Waste Management**: Track and manage waste, including segregation and disposal.
+- **Time Simulation**: Control and simulate time to observe changes in cargo and waste.
+- **Machine Learning Integration**: Predict optimal cargo placement and waste classification.
+- **Visualization**: Interactive visual interface for cargo management and monitoring.
 
-- Matches cargo items with optimal containers based on volume, weight, and zones
-- Handles high-priority and perishable items with special care
-- Enables efficient search and retrieval
-- Supports rearrangement and waste management workflows
-- Simulates time passage for dynamic scenarios
+## Technology Stack
 
----
+- **Frontend**: React.js
+- **Backend**: Django + Django REST Framework
+- **Database**: PostgreSQL / SQLite (for development)
+- **Machine Learning**: Python (scikit-learn / PyTorch)
+- **Deployment**: Docker (Docker Compose)
+- **API Format**: REST APIs
 
-## 📂 Repository Structure
+## API Endpoints
 
-.
-├── input_items.csv              # Generated sample items
-├── containers.csv               # Sample container definitions
-├── generate_samples.py          # Item generator
-├── generate_containers.py       # Container generator
-├── sample_data.py               # Zone mappings for items
-├── sample_checker.sh            # Bash script to validate submission
-├── src/
-│   ├── main.py                  # Entry point of the backend API
-│   ├── placement.py             # Optimization algorithm
-│   ├── api/                     # FastAPI endpoints
-│   └── utils/                   # Helper functions
-├── Dockerfile                   # For containerized deployment
-├── requirements.txt             # Python dependencies
-└── README.md                    # This file
-🧠 Core Features
-📌 Priority-Based Packing – High-priority items packed first with zone matching
+### Cargo APIs
+- `POST /api/place-cargo/`: Add new cargo
+- `POST /api/retrieve-cargo/`: Fetch an item
+- `POST /api/rearrange/`: Trigger rearrangement
+- `GET /api/containers/`: Get container status
 
-🧪 Perishable & Medical Handling – Expiry and usage limit awareness
+### Waste Management APIs
+- `POST /api/waste/add/`: Add waste
+- `POST /api/waste/process/`: Segregate waste
+- `GET /api/waste/status/`: Track waste
 
-🛠️ Rearrangement & Optimization – Reevaluate placement dynamically
+### Time APIs
+- `POST /api/simulate-time/`: Advance time
+- `GET /api/time/status/`: Get current time
 
-🗑️ Waste Management – Track unusable or expired items
+### Machine Learning APIs
+- `POST /api/predict/placement/`: Suggest placement
+- `POST /api/predict/waste-type/`: Classify waste
 
-🕓 Time Simulation API – Handles day-by-day mission progression
+## Getting Started
 
-🔍 Item Retrieval APIs – Smart search and fetch mechanism
+1. **Clone the repository**:
+   ```
+   git clone <repository-url>
+   cd space-cargo-management
+   ```
 
-🚀 How to Run (Locally & Docker)
-🔧 Local Setup
+2. **Set up the backend**:
+   - Navigate to the `backend` directory.
+   - Install dependencies:
+     ```
+     pip install -r requirements.txt
+     ```
+   - Run migrations:
+     ```
+     python manage.py migrate
+     ```
+   - Start the server:
+     ```
+     python manage.py runserver
+     ```
 
-# 1. Create a virtual environment
-python3 -m venv venv
-source venv/bin/activate
+3. **Set up the frontend**:
+   - Navigate to the `frontend` directory.
+   - Install dependencies:
+     ```
+     npm install
+     ```
+   - Start the development server:
+     ```
+     npm start
+     ```
 
-# 2. Install dependencies
-pip install -r requirements.txt
+## Contributing
 
-# 3. Run the API server
-uvicorn src.main:app --host 0.0.0.0 --port 8000
-🐳 Docker Setup
-Make sure Docker is installed. Then run:
+Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
 
-docker build -t nsh2025-cargo-stowage .
-docker run -p 8000:8000 nsh2025-cargo-stowage
-The app will be accessible at http://localhost:8000
+## License
 
-🔌 API Endpoints
-Endpoint	Functionality
-/api/placement	Get optimal placement recommendations
-/api/search	Search for items
-/api/retrieve	Retrieve specific item
-/api/place	Manually place item
-/api/waste/identify	List expired/damaged items
-/api/waste/return-plan	Get disposal plan
-/api/waste/complete-undocking	Finalize undocking
-/api/simulate/day	Simulate a mission day
-/api/import/items	Import items CSV
-/api/import/containers	Import containers CSV
-/api/export/arrangement	Export current stowage layout
-/api/logs	View logs of all actions
-📊 Dataset & Samples
-Items: input_items.csv – Generated using generate_samples.py
-
-Containers: containers.csv – Generated using generate_containers.py
-
-Sample Zones: Defined in sample_data.py
-
-🧪 Sample Checker
-To validate your final arrangement, run:
-
-bash sample_checker.sh
-This checks for:
-
-Overflow
-
-Zone mismatches
-
-Weight/volume breaches
-
-📑 Submission Requirements
-As per Submission Guidelines:
-
-✅ [x] Working Source Code (Python, FastAPI)
-
-✅ [x] Dockerfile using ubuntu:22.04, exposing port 8000
-
-✅ [x] This README
-
-📄 Technical Report: [Insert Google Drive Link]
-
-🎥 Demo Video: [Insert Google Drive Link]
-
-🧠 Tech Stack
-Python 3.10
-
-FastAPI – REST API backend
-
-Pandas & NumPy – Data processing
-
-Docker – Containerization
-
-Uvicorn – ASGI server
-
-🏁 Authors
-Team Name: [Karyasheel]
-
-Members:
-
-[Siddharth Kumar]
-
-[Aarav Majumdar]
-
-[Ronit Jaiswal]
-
-[Kanishk Nagar]
-
-
-🏆 Let’s Launch!
-This project aims to contribute toward safer and more efficient space missions by automating and optimizing cargo logistics. We hope this helps astronauts spend more time exploring — and less time packing.
-
-“It’s not rocket science... wait, yes it is.” 🚀
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
