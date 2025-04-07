@@ -20,7 +20,6 @@ Our system implements a cargo placement engine that:
 
 ## 📂 Repository Structure
 
-```bash
 .
 ├── input_items.csv              # Generated sample items
 ├── containers.csv               # Sample container definitions
@@ -51,9 +50,7 @@ Our system implements a cargo placement engine that:
 
 🚀 How to Run (Locally & Docker)
 🔧 Local Setup
-bash
-Copy
-Edit
+
 # 1. Create a virtual environment
 python3 -m venv venv
 source venv/bin/activate
@@ -66,9 +63,6 @@ uvicorn src.main:app --host 0.0.0.0 --port 8000
 🐳 Docker Setup
 Make sure Docker is installed. Then run:
 
-bash
-Copy
-Edit
 docker build -t nsh2025-cargo-stowage .
 docker run -p 8000:8000 nsh2025-cargo-stowage
 The app will be accessible at http://localhost:8000
